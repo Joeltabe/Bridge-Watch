@@ -2,10 +2,11 @@ import { Link, useLocation } from "react-router-dom";
 import { SkeletonText } from "./Skeleton";
 
 const navLinks = [
-  { to: "/", label: "Dashboard" },
+  { to: "/dashboard", label: "Dashboard" },
   { to: "/bridges", label: "Bridges" },
   { to: "/transactions", label: "Transactions" },
   { to: "/analytics", label: "Analytics" },
+  { to: "/reports", label: "Reports" },
 ];
 
 interface NavbarProps {
@@ -46,7 +47,7 @@ export default function Navbar({ isLoading = false }: NavbarProps) {
               className="text-xl font-bold text-white focus:outline-none focus:ring-2 focus:ring-stellar-blue focus:ring-offset-2 focus:ring-offset-stellar-card rounded-sm"
               aria-label="Bridge Watch home"
             >
-              Bridge Watch
+              Bridge <span className="text-stellar-blue">Watch</span>
             </Link>
             <div className="hidden md:flex space-x-4">
               {navLinks.map((link) => (
